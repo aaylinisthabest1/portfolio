@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Портфолио</title>
+    <style>
+        .project {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav main-nav">
+            <ul class="main-nav__list main-list">
+                <li class="main-list__item list-item">
+                    <a class="list-item__link" href="#home">HOME</a>
+                </li>
+                <li class="main-list__item list-item">
+                    <a class="list-item__link" href="#about">ABOUT</a>
+                </li>
+                <li class="main-list__item list-item">
+                    <a class="list-item__link" href="#skills">MY SKILLS</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="main__home home" id="home">
+            <h1 class="home__title">NAME SURNAME</h1>
+            <p class="home__subtitle">WEB-DEVELOPER, PYTHON PROGRAMMER</p>
+        </section>
+        <section class="main__about about" id="about">
+            <h2 class="about__title">ABOUT ME</h2>
+            <div class="about__info info-block">
+                <p class="info-block__text">
+                    Я веб-разработчик и Python-программист с многолетним опытом создания динамичных и интерактивных веб-приложений. Я увлекаюсь новыми технологиями и стремлюсь постоянно улучшать свои навыки. Люблю решать сложные задачи и работать над интересными проектами.
+                </p>
+                <img class="info-block__img" src="../static/img/your-new-image.png" alt="me" width="250" height="250" />
+            </div>
+        </section>
+        <section class="main__skills skills" id="skills">
+            <h2 class="skills__title">MY SKILLS</h2>
+            <ul class="skills__list skills-list">
+                <li class="skills-list__skill skill">
+                    <img class="skill__img" src="../static/img/python.png" alt="python" width="150" height="150" />
+                    <span class="skill__info">Python - Язык программирования для всех уровней, от новичков до профессионалов.</span>
+                    <button class="skill__button" onclick="showProject('python')">SHOW PROJECT</button>
+                </li>
+                <li class="skills-list__skill skill">
+                    <img class="skill__img" src="../static/img/discord.png" alt="discord" width="150" height="150" />
+                    <span class="skill__info">Discord Bot Development - Создание ботов для Discord с помощью Python и других технологий.</span>
+                    <button class="skill__button" onclick="showProject('discord')">SHOW PROJECT</button>
+                </li>
+                <li class="skills-list__skill skill">
+                    <img class="skill__img" src="../static/img/html.png" alt="html" width="150" height="150" />
+                    <span class="skill__info">HTML & CSS - Основы веб-разработки, создание адаптивных и кросс-браузерных сайтов.</span>
+                    <button class="skill__button" onclick="showProject('html')">SHOW PROJECT</button>
+                </li>
+                <li class="skills-list__skill skill">
+                    <img class="skill__img" src="../static/img/db.webp" alt="SQL" width="150" height="150" />
+                    <span class="skill__info">SQL Databases - Управление и оптимизация баз данных с помощью SQL.</span>
+                    <button class="skill__button" onclick="showProject('db')">SHOW PROJECT</button>
+                </li>
+            </ul>
+            <div id="python-project" class="skills__project project">
+                <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+                <a class="project__link" href="https://github.com/aaylinisthabest1/python-project">Открыть на GitHub</a>
+            </div>
+            <div id="discord-project" class="skills__project project">
+                <img class="project__img" src="../static/img/discord-project.png" alt="project" width="500">
+                <a class="project__link" href="https://github.com/aaylinisthabest1/discord-project">Открыть на GitHub</a>
+            </div>
+            <div id="html-project" class="skills__project project">
+                <img class="project__img" src="../static/img/html-project.png" alt="project" width="500">
+                <a class="project__link" href="https://github.com/aaylinisthabest1/html-project">Открыть на GitHub</a>
+            </div>
+            <div id="db-project" class="skills__project project">
+                <img class="project__img" src="../static/img/db-project.png" alt="project" width="500">
+                <a class="project__link" href="https://github.com/aaylinisthabest1/db-project">Открыть на GitHub</a>
+            </div>
+        </section>
+        <section class="main__feedback feedback" id="feedback">
+            <h2 class="feedback__title">FEEDBACK</h2>
+            <form action="/submit_feedback" method="POST" class="feedback__form form">
+                <label for="email">
+                    <input type="email" class="form__input" name="email" id="email" placeholder="Введите E-mail" required>
+                </label>
+                <label for="text">
+                    <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Комментарий"></textarea>
+                </label>
+                <button class="form__button" type="submit">ОТПРАВИТЬ</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="https://www.instagram.com/in/aylin" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/aaylinisthabest1" target="_blank">GitHub</a></li>
+            <li><a href="https://discord.com/moonlight_is_aylinie" target="_blank">Twitter</a></li>
+        </ul>
+    </footer>
+    <script>
+        function showProject(skill) {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.style.display = 'none';
+            });
+            document.getElementById(skill + '-project').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+
+
